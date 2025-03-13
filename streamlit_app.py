@@ -6,7 +6,7 @@ import tempfile
 import os
 
 # Load the trained YOLOv5 model (replace 'best.pt' with your actual model path)
-model = torch.hub.load('ultralytics/yolov10n', 'custom', path='runs/train/exp/weights/yolov10n.pt')
+model = torch.hub.load('ultralytics/yolov10n', 'custom', path='best.pt')
 
 def process_video(input_video):
     # Read video frames
