@@ -1,7 +1,7 @@
 torch==2.2.0
-opencv-python-headless==4.5.1.48
-pytesseract==0.3.8
-streamlit==1.16.0
-ultralytics==8.0.0
-numpy<2.0
-altair==4.2.2
+opencv-python-headless==4.6.0.66  # Headless OpenCV (no OpenGL dependencies)
+pytesseract==0.3.8  # Tesseract OCR
+streamlit==1.16.0  # Streamlit for web app
+ultralytics==8.0.0  # YOLOv5 and YOLOv10 (model loading)
+numpy<2.0  # NumPy for array manipulations
+Pillow==8.3.2  # Pillow for image processing
