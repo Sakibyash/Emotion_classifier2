@@ -1,7 +1,7 @@
-torch==2.2.0
-opencv-python-headless==4.6.0.66  # Headless OpenCV (no OpenGL dependencies)
-pytesseract==0.3.8  # Tesseract OCR
-streamlit==1.16.0  # Streamlit for web app
-ultralytics==8.0.0  # YOLOv5 and YOLOv10 (model loading)
-numpy<2.0  # NumPy for array manipulations
-Pillow==8.3.2  # Pillow for image processing
+torch>=2.0.0  # Allow for any compatible version of PyTorch
+opencv-python-headless>=4.5.1  # Allow any compatible version of OpenCV headless
+pytesseract>=0.3.8  # Use latest compatible version of pytesseract
+streamlit>=1.16.0  # Streamlit, no exact version needed
+ultralytics>=8.0.0  # Allow latest version of Ultralytics (YOLOv5/YOLOv10)
+numpy<2.0  # Limit numpy to avoid compatibility issues with PyTorch
+Pillow>=8.3.2  # Latest Pillow for image processing
