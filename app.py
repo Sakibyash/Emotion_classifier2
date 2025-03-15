@@ -10,7 +10,7 @@ app = Flask(__name__)
 # Load the trained model
 model = models.resnet50(pretrained=False)
 model.fc = torch.nn.Linear(2048, 7)  # Adjust for number of emotion categories
-model.load_state_dict(torch.load('model/emotion_model.pth'))
+model.load_state_dict(torch.load('custom_resnet50_emotion_model .pth'))
 model.eval()
 
 # Define image transforms
