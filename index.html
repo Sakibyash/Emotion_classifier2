@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Classification</title>
+    <style>
+        /* Embedded CSS */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://miro.medium.com/v2/resize:fit:4800/format:webp/1*bSLNlG7crv-p-m4LVYYk3Q.png'); /* Your WebP image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Apply a blur effect */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.6); /* Semi-transparent overlay */
+            backdrop-filter: blur(8px); /* Blur effect */
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2; /* Ensure content is above the overlay */
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #6fa3ef; /* Light Steel Blue */
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            background-color: #f8f8f8; /* Light Gray */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="file"] {
+            margin-right: 10px;
+            padding: 10px;
+            border: 2px solid #b0e0e6; /* Powder Blue */
+            border-radius: 4px;
+            background-color: #e6f7ff; /* Light Cyan */
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #a8d8ea; /* Light Sky Blue */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #79b5d0; /* Medium Light Sky Blue */
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #6fa3ef; /* Light Steel Blue */
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            color: #3c6e71; /* Light Charcoal */
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div> <!-- Overlay with blur effect -->
+
+    <div class="container">
+        <h1>Upload an Image for Emotion Classification</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <button type="submit">Predict Emotion</button>
+        </form>
+        {% if emotion %}
+            <h2>Predicted Emotion: {{ emotion }}</h2>
+            <p>Confidence: {{ confidence }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
